@@ -1,4 +1,4 @@
-#IGBlueMon - dynamic server monitor for IOS and OSX
+# IGBlueMon - dynamic server monitor for IOS and OSX
 
 I'm monitoring a dozen or so bluemix servers with this tool.
 

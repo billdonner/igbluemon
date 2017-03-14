@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>igbluemonios.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>88BE10071E78723D006FF9A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88BE10481E78731A006FF9A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

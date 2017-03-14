@@ -7,23 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88BE100C1E78723D006FF9A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE100B1E78723D006FF9A9 /* AppDelegate.swift */; };
-		88BE100E1E78723D006FF9A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE100D1E78723D006FF9A9 /* ViewController.swift */; };
-		88BE10101E78723D006FF9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BE100F1E78723D006FF9A9 /* Assets.xcassets */; };
-		88BE10131E78723D006FF9A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BE10111E78723D006FF9A9 /* Main.storyboard */; };
+		88BE10301E7872AB006FF9A9 /* BlueConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE102E1E7872AB006FF9A9 /* BlueConfig.swift */; };
+		88BE10311E7872AB006FF9A9 /* TaskSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE102F1E7872AB006FF9A9 /* TaskSchedule.swift */; };
+		88BE103A1E7872B8006FF9A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10331E7872B8006FF9A9 /* AppDelegate.swift */; };
+		88BE103B1E7872B8006FF9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BE10341E7872B8006FF9A9 /* Assets.xcassets */; };
+		88BE103C1E7872B8006FF9A9 /* IGBlueMonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10351E7872B8006FF9A9 /* IGBlueMonViewController.swift */; };
+		88BE103E1E7872B8006FF9A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BE10371E7872B8006FF9A9 /* Main.storyboard */; };
+		88BE103F1E7872B8006FF9A9 /* TaskDataOSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10381E7872B8006FF9A9 /* TaskDataOSX.swift */; };
+		88BE10401E7872B8006FF9A9 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10391E7872B8006FF9A9 /* WindowController.swift */; };
+		88BE10421E7872C6006FF9A9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BE10411E7872C6006FF9A9 /* Media.xcassets */; };
+		88BE105B1E7873B7006FF9A9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BE10411E7872C6006FF9A9 /* Media.xcassets */; };
+		88BE105C1E7873C0006FF9A9 /* BlueConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE102E1E7872AB006FF9A9 /* BlueConfig.swift */; };
+		88BE105D1E7873C4006FF9A9 /* TaskSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE102F1E7872AB006FF9A9 /* TaskSchedule.swift */; };
+		88BE105E1E7873DE006FF9A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE101B1E7872A2006FF9A9 /* AppDelegate.swift */; };
+		88BE105F1E7873E4006FF9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BE101C1E7872A2006FF9A9 /* Assets.xcassets */; };
+		88BE10601E7873EC006FF9A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BE101D1E7872A2006FF9A9 /* LaunchScreen.storyboard */; };
+		88BE10611E7873F4006FF9A9 /* IGBlueMonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10211E7872A2006FF9A9 /* IGBlueMonViewController.swift */; };
+		88BE10631E787403006FF9A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BE10231E7872A2006FF9A9 /* Main.storyboard */; };
+		88BE10641E787407006FF9A9 /* TaskDataIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10241E7872A2006FF9A9 /* TaskDataIOS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		88BE10081E78723D006FF9A9 /* igbluemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = igbluemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		88BE100B1E78723D006FF9A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		88BE100D1E78723D006FF9A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		88BE100F1E78723D006FF9A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		88BE10121E78723D006FF9A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		88BE10141E78723D006FF9A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88BE101B1E7872A2006FF9A9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../bluemon-ios/AppDelegate.swift"; sourceTree = "<group>"; };
+		88BE101C1E7872A2006FF9A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../bluemon-ios/Assets.xcassets"; sourceTree = "<group>"; };
+		88BE101E1E7872A2006FF9A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88BE10211E7872A2006FF9A9 /* IGBlueMonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IGBlueMonViewController.swift; path = "../bluemon-ios/IGBlueMonViewController.swift"; sourceTree = "<group>"; };
+		88BE10221E7872A2006FF9A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../bluemon-ios/Info.plist"; sourceTree = "<group>"; };
+		88BE10231E7872A2006FF9A9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../bluemon-ios/Main.storyboard"; sourceTree = "<group>"; };
+		88BE10241E7872A2006FF9A9 /* TaskDataIOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskDataIOS.swift; path = "../bluemon-ios/TaskDataIOS.swift"; sourceTree = "<group>"; };
+		88BE102E1E7872AB006FF9A9 /* BlueConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueConfig.swift; sourceTree = "<group>"; };
+		88BE102F1E7872AB006FF9A9 /* TaskSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskSchedule.swift; sourceTree = "<group>"; };
+		88BE10331E7872B8006FF9A9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		88BE10341E7872B8006FF9A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88BE10351E7872B8006FF9A9 /* IGBlueMonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGBlueMonViewController.swift; sourceTree = "<group>"; };
+		88BE10361E7872B8006FF9A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88BE10371E7872B8006FF9A9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		88BE10381E7872B8006FF9A9 /* TaskDataOSX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDataOSX.swift; sourceTree = "<group>"; };
+		88BE10391E7872B8006FF9A9 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		88BE10411E7872C6006FF9A9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		88BE10431E7872DA006FF9A9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		88BE10491E78731A006FF9A9 /* igbluemonios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = igbluemonios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		88BE10051E78723D006FF9A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88BE10461E78731A006FF9A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,7 +71,11 @@
 		88BE0FFF1E78723D006FF9A9 = {
 			isa = PBXGroup;
 			children = (
-				88BE100A1E78723D006FF9A9 /* igbluemon */,
+				88BE10431E7872DA006FF9A9 /* README.md */,
+				88BE10411E7872C6006FF9A9 /* Media.xcassets */,
+				88BE10321E7872B8006FF9A9 /* bluemon-mac */,
+				88BE102D1E7872AB006FF9A9 /* blueshare */,
+				88BE104A1E78731A006FF9A9 /* igbluemonios */,
 				88BE10091E78723D006FF9A9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,20 +84,46 @@
 			isa = PBXGroup;
 			children = (
 				88BE10081E78723D006FF9A9 /* igbluemon.app */,
+				88BE10491E78731A006FF9A9 /* igbluemonios.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		88BE100A1E78723D006FF9A9 /* igbluemon */ = {
+		88BE102D1E7872AB006FF9A9 /* blueshare */ = {
 			isa = PBXGroup;
 			children = (
-				88BE100B1E78723D006FF9A9 /* AppDelegate.swift */,
-				88BE100D1E78723D006FF9A9 /* ViewController.swift */,
-				88BE100F1E78723D006FF9A9 /* Assets.xcassets */,
-				88BE10111E78723D006FF9A9 /* Main.storyboard */,
-				88BE10141E78723D006FF9A9 /* Info.plist */,
+				88BE102E1E7872AB006FF9A9 /* BlueConfig.swift */,
+				88BE102F1E7872AB006FF9A9 /* TaskSchedule.swift */,
 			);
-			path = igbluemon;
+			path = blueshare;
+			sourceTree = "<group>";
+		};
+		88BE10321E7872B8006FF9A9 /* bluemon-mac */ = {
+			isa = PBXGroup;
+			children = (
+				88BE10331E7872B8006FF9A9 /* AppDelegate.swift */,
+				88BE10341E7872B8006FF9A9 /* Assets.xcassets */,
+				88BE10351E7872B8006FF9A9 /* IGBlueMonViewController.swift */,
+				88BE10361E7872B8006FF9A9 /* Info.plist */,
+				88BE10371E7872B8006FF9A9 /* Main.storyboard */,
+				88BE10381E7872B8006FF9A9 /* TaskDataOSX.swift */,
+				88BE10391E7872B8006FF9A9 /* WindowController.swift */,
+			);
+			path = "bluemon-mac";
+			sourceTree = "<group>";
+		};
+		88BE104A1E78731A006FF9A9 /* igbluemonios */ = {
+			isa = PBXGroup;
+			children = (
+				88BE101B1E7872A2006FF9A9 /* AppDelegate.swift */,
+				88BE101C1E7872A2006FF9A9 /* Assets.xcassets */,
+				88BE101D1E7872A2006FF9A9 /* LaunchScreen.storyboard */,
+				88BE10211E7872A2006FF9A9 /* IGBlueMonViewController.swift */,
+				88BE10221E7872A2006FF9A9 /* Info.plist */,
+				88BE10231E7872A2006FF9A9 /* Main.storyboard */,
+				88BE10241E7872A2006FF9A9 /* TaskDataIOS.swift */,
+			);
+			path = igbluemonios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +146,23 @@
 			productReference = 88BE10081E78723D006FF9A9 /* igbluemon.app */;
 			productType = "com.apple.product-type.application";
 		};
+		88BE10481E78731A006FF9A9 /* igbluemonios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88BE10581E78731A006FF9A9 /* Build configuration list for PBXNativeTarget "igbluemonios" */;
+			buildPhases = (
+				88BE10451E78731A006FF9A9 /* Sources */,
+				88BE10461E78731A006FF9A9 /* Frameworks */,
+				88BE10471E78731A006FF9A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = igbluemonios;
+			productName = igbluemonios;
+			productReference = 88BE10491E78731A006FF9A9 /* igbluemonios.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +174,11 @@
 				ORGANIZATIONNAME = billdonner;
 				TargetAttributes = {
 					88BE10071E78723D006FF9A9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = X2PQYA6S48;
+						ProvisioningStyle = Automatic;
+					};
+					88BE10481E78731A006FF9A9 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = X2PQYA6S48;
 						ProvisioningStyle = Automatic;
@@ -112,6 +199,7 @@
 			projectRoot = "";
 			targets = (
 				88BE10071E78723D006FF9A9 /* igbluemon */,
+				88BE10481E78731A006FF9A9 /* igbluemonios */,
 			);
 		};
 /* End PBXProject section */
@@ -121,8 +209,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88BE10101E78723D006FF9A9 /* Assets.xcassets in Resources */,
-				88BE10131E78723D006FF9A9 /* Main.storyboard in Resources */,
+				88BE103E1E7872B8006FF9A9 /* Main.storyboard in Resources */,
+				88BE103B1E7872B8006FF9A9 /* Assets.xcassets in Resources */,
+				88BE10421E7872C6006FF9A9 /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88BE10471E78731A006FF9A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BE10631E787403006FF9A9 /* Main.storyboard in Resources */,
+				88BE10601E7873EC006FF9A9 /* LaunchScreen.storyboard in Resources */,
+				88BE105F1E7873E4006FF9A9 /* Assets.xcassets in Resources */,
+				88BE105B1E7873B7006FF9A9 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,20 +233,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88BE100E1E78723D006FF9A9 /* ViewController.swift in Sources */,
-				88BE100C1E78723D006FF9A9 /* AppDelegate.swift in Sources */,
+				88BE103A1E7872B8006FF9A9 /* AppDelegate.swift in Sources */,
+				88BE10311E7872AB006FF9A9 /* TaskSchedule.swift in Sources */,
+				88BE103F1E7872B8006FF9A9 /* TaskDataOSX.swift in Sources */,
+				88BE10401E7872B8006FF9A9 /* WindowController.swift in Sources */,
+				88BE10301E7872AB006FF9A9 /* BlueConfig.swift in Sources */,
+				88BE103C1E7872B8006FF9A9 /* IGBlueMonViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88BE10451E78731A006FF9A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BE105E1E7873DE006FF9A9 /* AppDelegate.swift in Sources */,
+				88BE10611E7873F4006FF9A9 /* IGBlueMonViewController.swift in Sources */,
+				88BE105C1E7873C0006FF9A9 /* BlueConfig.swift in Sources */,
+				88BE105D1E7873C4006FF9A9 /* TaskSchedule.swift in Sources */,
+				88BE10641E787407006FF9A9 /* TaskDataIOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		88BE10111E78723D006FF9A9 /* Main.storyboard */ = {
+		88BE101D1E7872A2006FF9A9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				88BE10121E78723D006FF9A9 /* Base */,
+				88BE101E1E7872A2006FF9A9 /* Base */,
 			);
-			name = Main.storyboard;
+			name = LaunchScreen.storyboard;
+			path = "../bluemon-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -248,7 +365,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X2PQYA6S48;
-				INFOPLIST_FILE = igbluemon/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/bluemon-mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.igbluemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -262,11 +379,46 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X2PQYA6S48;
-				INFOPLIST_FILE = igbluemon/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/bluemon-mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.igbluemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		88BE10591E78731A006FF9A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X2PQYA6S48;
+				INFOPLIST_FILE = "$(SRCROOT)/bluemon-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.igbluemonios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88BE105A1E78731A006FF9A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X2PQYA6S48;
+				INFOPLIST_FILE = "$(SRCROOT)/bluemon-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.igbluemonios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -287,6 +439,14 @@
 			buildConfigurations = (
 				88BE10181E78723D006FF9A9 /* Debug */,
 				88BE10191E78723D006FF9A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		88BE10581E78731A006FF9A9 /* Build configuration list for PBXNativeTarget "igbluemonios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88BE10591E78731A006FF9A9 /* Debug */,
+				88BE105A1E78731A006FF9A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

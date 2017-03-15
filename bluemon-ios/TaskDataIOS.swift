@@ -7,22 +7,29 @@
 
 import UIKit
 
-let bicon = UIImage(named:"blue-ball")!
-let ricon = UIImage(named:"red-ball")!
-let yicon = UIImage(named:"yellow-ball")!
-
-public class TaskData:TaskDataInt {
- 
-  var icon: UIImage
-  var color: UIColor
-  var isFolder = false
-  
-  init(idx: Int, status: String, name: String, server: String, uptime: String, description: String, version:String, icon: UIImage,   color: UIColor) {
-    self.icon = icon
-    self.color = color
+extension DisplayDecorations {
+    static let bicon = UIImage(named:"blue-ball")!
+    static let ricon = UIImage(named:"red-ball")!
+    static let yicon = UIImage(named:"yellow-ball")!
+    func imageFor()->UIImage {
+        switch self {
+        case .yellowish: return DisplayDecorations.yicon
+        case .blueish: return DisplayDecorations.bicon
+        case .reddish: return DisplayDecorations.ricon
+        }
+    }
     
     
-    super.init(idx: idx, status: status, name: name, server: server, uptime: uptime, description: description, version: version)
-  }
- 
+    static let cy = UIColor(colorLiteralRed: 0.2, green: 0, blue: 0.2, alpha: 0.7)
+    static let cr = UIColor(colorLiteralRed: 0.2, green: 0, blue: 0, alpha: 0.7)
+    static let cg = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.2, alpha: 0.7)
+    
+    func colorFor()->UIColor {
+        switch self {
+        case .yellowish: return DisplayDecorations.cy
+        case .blueish:   return DisplayDecorations.cg
+        case .reddish:   return DisplayDecorations.cr
+        }
+    }
 }
+

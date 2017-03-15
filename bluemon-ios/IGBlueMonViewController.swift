@@ -11,8 +11,6 @@ import SafariServices
 
 class IGBlueMonViewController: UITableViewController {
   
-  let cr = UIColor(colorLiteralRed: 0.2, green: 0, blue: 0, alpha: 0.7)
-  let cg = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.2, alpha: 0.7)
   let cellID = "IGBlueMonCellID"
   
   @IBOutlet var blueView: UIView!
@@ -24,8 +22,8 @@ class IGBlueMonViewController: UITableViewController {
 
   func tictoc() {
     //////////
-    TL.reloadTaskList(ordering:sortOrder,ascending:sortAscending)
-    TL.runScheduler() // once per second
+    MasterTasks.reloadTaskList(ordering:sortOrder,ascending:sortAscending)
+    MasterTasks.runScheduler() // once per second
     //////////
     tableView.reloadData()
   }
@@ -33,7 +31,6 @@ class IGBlueMonViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     //////
-    TL.setup()
     ///////
     
     imageView =   UIImageView(image: UIImage(named: "blue1024"))
@@ -47,7 +44,12 @@ class IGBlueMonViewController: UITableViewController {
     //addBlurEffect()
     
     //////////
-    TL.newTaskList()
+    
+    do { try MasterTasks.setup() } catch { // do something nice looking??
+        fatalError("cant setup MasterTasks")
+    }
+    
+    MasterTasks.newTaskList()
     //////////
     
     
@@ -59,10 +61,8 @@ class IGBlueMonViewController: UITableViewController {
     tictoc() // run one full cycle
     
     // get the timer going once per second
-    /// - if you turn off the time nothing will ever display because results from remote calls dont force reloads
-    
-    
-    Timer.scheduledTimer(timeInterval: 1, target: self,
+    /// - if you turn off the time nothing will ever display because results from remote calls dont force reloads 
+    Timer.scheduledTimer(timeInterval: Double(1.0/MasterTasks.framesPerSecond), target: self,
                          selector: #selector(tictoc), userInfo: nil, repeats: true)
  
 
@@ -74,7 +74,7 @@ class IGBlueMonViewController: UITableViewController {
     // Dispose of any resources that can be recreated.
   }
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return TL.tasksCount()
+    return MasterTasks.tasksCount()
   }
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -82,13 +82,14 @@ class IGBlueMonViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
     //////////
-    let item = TL.taskFor(row:indexPath.row)
+    let item = MasterTasks.itemData(row:indexPath.row)
     //////////
-     cell.contentView.backgroundColor = item.status != "200" ? cr : cg
+    
+     cell.contentView.backgroundColor = item.displayDecorations.colorFor()
     
     
-    cell.textLabel?.text =  item.paddedUptime() + " " + item.name // + " \(item.selfidx)"
-    cell.detailTextLabel?.text = item.status + " " + item.server
+    cell.textLabel?.text =  item.paddedUptime + " " + item.name // + " \(item.selfidx)"
+    cell.detailTextLabel?.text = item.status + " " + "\(item.downcount)" + " " + item.server
     
     return cell
     
@@ -102,28 +103,28 @@ class IGBlueMonViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     //////////
-    let task = TL.taskFor(row:indexPath.row)
+    let task = MasterTasks.itemData(row:indexPath.row)
     //////////
 
-    let qurl = URL(string:task.server + "/json")
+    let qurl = URL(string:task.statusEndpoint)
     if let url = qurl {
       let vc = SFSafariViewController(url:url)
-      vc.preferredBarTintColor = cg
-      vc.preferredControlTintColor = cr
+      vc.preferredBarTintColor = DisplayDecorations.cg
+      vc.preferredControlTintColor = DisplayDecorations.cr
       self.present(vc,animated:true)
     }
       }
   
   override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
     //////////
-      let task = TL.taskFor(row:indexPath.row)
+      let task = MasterTasks.itemData(row:indexPath.row)
     //////////
 
       let qurl = URL(string:task.server)
       if let url = qurl {
         let vc = SFSafariViewController(url:url)
-        vc.preferredBarTintColor = cr
-        vc.preferredControlTintColor = cg
+        vc.preferredBarTintColor = DisplayDecorations.cr
+        vc.preferredControlTintColor = DisplayDecorations.cg
         self.present(vc,animated:true)
       }
     }

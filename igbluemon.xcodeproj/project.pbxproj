@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		88BE10301E7872AB006FF9A9 /* BlueConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE102E1E7872AB006FF9A9 /* BlueConfig.swift */; };
-		88BE10311E7872AB006FF9A9 /* TaskSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE102F1E7872AB006FF9A9 /* TaskSchedule.swift */; };
+		88BE10311E7872AB006FF9A9 /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE102F1E7872AB006FF9A9 /* TaskData.swift */; };
 		88BE103A1E7872B8006FF9A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10331E7872B8006FF9A9 /* AppDelegate.swift */; };
 		88BE103B1E7872B8006FF9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BE10341E7872B8006FF9A9 /* Assets.xcassets */; };
 		88BE103C1E7872B8006FF9A9 /* IGBlueMonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10351E7872B8006FF9A9 /* IGBlueMonViewController.swift */; };
@@ -18,13 +18,15 @@
 		88BE10421E7872C6006FF9A9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BE10411E7872C6006FF9A9 /* Media.xcassets */; };
 		88BE105B1E7873B7006FF9A9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BE10411E7872C6006FF9A9 /* Media.xcassets */; };
 		88BE105C1E7873C0006FF9A9 /* BlueConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE102E1E7872AB006FF9A9 /* BlueConfig.swift */; };
-		88BE105D1E7873C4006FF9A9 /* TaskSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE102F1E7872AB006FF9A9 /* TaskSchedule.swift */; };
+		88BE105D1E7873C4006FF9A9 /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE102F1E7872AB006FF9A9 /* TaskData.swift */; };
 		88BE105E1E7873DE006FF9A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE101B1E7872A2006FF9A9 /* AppDelegate.swift */; };
 		88BE105F1E7873E4006FF9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BE101C1E7872A2006FF9A9 /* Assets.xcassets */; };
 		88BE10601E7873EC006FF9A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BE101D1E7872A2006FF9A9 /* LaunchScreen.storyboard */; };
 		88BE10611E7873F4006FF9A9 /* IGBlueMonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10211E7872A2006FF9A9 /* IGBlueMonViewController.swift */; };
 		88BE10631E787403006FF9A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BE10231E7872A2006FF9A9 /* Main.storyboard */; };
 		88BE10641E787407006FF9A9 /* TaskDataIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10241E7872A2006FF9A9 /* TaskDataIOS.swift */; };
+		88BE10661E788196006FF9A9 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10651E788196006FF9A9 /* TaskList.swift */; };
+		88BE10671E788196006FF9A9 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE10651E788196006FF9A9 /* TaskList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,7 @@
 		88BE10231E7872A2006FF9A9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../bluemon-ios/Main.storyboard"; sourceTree = "<group>"; };
 		88BE10241E7872A2006FF9A9 /* TaskDataIOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskDataIOS.swift; path = "../bluemon-ios/TaskDataIOS.swift"; sourceTree = "<group>"; };
 		88BE102E1E7872AB006FF9A9 /* BlueConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueConfig.swift; sourceTree = "<group>"; };
-		88BE102F1E7872AB006FF9A9 /* TaskSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskSchedule.swift; sourceTree = "<group>"; };
+		88BE102F1E7872AB006FF9A9 /* TaskData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
 		88BE10331E7872B8006FF9A9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88BE10341E7872B8006FF9A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88BE10351E7872B8006FF9A9 /* IGBlueMonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGBlueMonViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		88BE10411E7872C6006FF9A9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		88BE10431E7872DA006FF9A9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		88BE10491E78731A006FF9A9 /* igbluemonios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = igbluemonios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88BE10651E788196006FF9A9 /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				88BE102E1E7872AB006FF9A9 /* BlueConfig.swift */,
-				88BE102F1E7872AB006FF9A9 /* TaskSchedule.swift */,
+				88BE102F1E7872AB006FF9A9 /* TaskData.swift */,
+				88BE10651E788196006FF9A9 /* TaskList.swift */,
 			);
 			path = blueshare;
 			sourceTree = "<group>";
@@ -233,8 +237,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88BE10661E788196006FF9A9 /* TaskList.swift in Sources */,
 				88BE103A1E7872B8006FF9A9 /* AppDelegate.swift in Sources */,
-				88BE10311E7872AB006FF9A9 /* TaskSchedule.swift in Sources */,
+				88BE10311E7872AB006FF9A9 /* TaskData.swift in Sources */,
 				88BE103F1E7872B8006FF9A9 /* TaskDataOSX.swift in Sources */,
 				88BE10401E7872B8006FF9A9 /* WindowController.swift in Sources */,
 				88BE10301E7872AB006FF9A9 /* BlueConfig.swift in Sources */,
@@ -246,10 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88BE10671E788196006FF9A9 /* TaskList.swift in Sources */,
 				88BE105E1E7873DE006FF9A9 /* AppDelegate.swift in Sources */,
 				88BE10611E7873F4006FF9A9 /* IGBlueMonViewController.swift in Sources */,
 				88BE105C1E7873C0006FF9A9 /* BlueConfig.swift in Sources */,
-				88BE105D1E7873C4006FF9A9 /* TaskSchedule.swift in Sources */,
+				88BE105D1E7873C4006FF9A9 /* TaskData.swift in Sources */,
 				88BE10641E787407006FF9A9 /* TaskDataIOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

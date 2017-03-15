@@ -1,7 +1,4 @@
 import Cocoa
-
-
-
 class IGBlueMonViewController: NSViewController {
   
   @IBOutlet weak var statusLabel: NSTextField!
@@ -14,13 +11,14 @@ class IGBlueMonViewController: NSViewController {
   let startdate = Date()
   
   
-  func tictoc() {
+    func tictoc( ) {
     ///////
-    TL.reloadTaskList(ordering:sortOrder,ascending:sortAscending)
+    MasterTasks.reloadTaskList(ordering:sortOrder,ascending:sortAscending)
     
-    TL.runScheduler() // once per second
+    MasterTasks.runScheduler() // once per second
     //////////
     
+        
     statusLabel.stringValue = dateFormate.string(from: Date())
     tableView.reloadData()
     
@@ -31,8 +29,12 @@ class IGBlueMonViewController: NSViewController {
     
     // Override point for customization after application launch.
 
-    TL.setup()
     
+    //////////
+    
+    do { try MasterTasks.setup() } catch { // do something nice looking??
+        fatalError("cant setup MasterTasks")
+    }
     
     dateFormate = DateFormatter()
     dateFormate!.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -53,7 +55,7 @@ class IGBlueMonViewController: NSViewController {
     tableView.tableColumns[3].sortDescriptorPrototype = descriptorDescription
     
     //////
-    TL.newTaskList()
+    MasterTasks.newTaskList()
     //////
     //dont setup delegates until tasklist is established
     
@@ -61,7 +63,7 @@ class IGBlueMonViewController: NSViewController {
     tableView.dataSource = self
     
     tictoc()
-    Timer.scheduledTimer(timeInterval: 1, target: self,
+    Timer.scheduledTimer(timeInterval: Double(1.0/MasterTasks.framesPerSecond), target: self,
                          selector: #selector(tictoc), userInfo: nil, repeats: true)
   }
   
@@ -69,7 +71,7 @@ class IGBlueMonViewController: NSViewController {
     didSet {
       if (representedObject as? String) != nil {
         ////////////
-        TL.newTaskList()
+        MasterTasks.newTaskList()
         /////////////
         reloadFileList()
       }
@@ -78,7 +80,7 @@ class IGBlueMonViewController: NSViewController {
   
   func reloadFileList() {
     ////////////
-    TL.reloadTaskList(ordering:sortOrder,ascending:sortAscending)
+    MasterTasks.reloadTaskList(ordering:sortOrder,ascending:sortAscending)
     ///////////////
     //tableView.reloadData()
   }
@@ -95,10 +97,10 @@ class IGBlueMonViewController: NSViewController {
     //    else
     
     if(itemsSelected == 0) {
-      text = "\(TL.tasksCount()) items"
+      text = "\(MasterTasks.tasksCount()) items"
     }
     else {
-      text = "\(itemsSelected) of \(TL.tasksCount()) selected"
+      text = "\(itemsSelected) of \(MasterTasks.tasksCount()) selected"
     }
     
     statusLabel.stringValue = text
@@ -112,7 +114,7 @@ class IGBlueMonViewController: NSViewController {
       return
     }
     /////////
-    let item = TL.taskFor(row:tableView.selectedRow)
+    let item = MasterTasks.itemData(row:tableView.selectedRow)
     //////////
     //    if item.isFolder { // is folder is hardwired false
     //      representedObject = item.server as Any
@@ -133,7 +135,7 @@ class IGBlueMonViewController: NSViewController {
 extension IGBlueMonViewController: NSTableViewDataSource {
   
   func numberOfRows(in tableView: NSTableView) -> Int {
-    return TL.tasksCount()
+    return MasterTasks.tasksCount()
   }
   
   func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
@@ -170,16 +172,16 @@ extension IGBlueMonViewController: NSTableViewDelegate {
     var cellIdentifier: String = ""
     
     ///////
-    let item = TL.taskFor(row:row)
+    let item = MasterTasks.itemData(row:row)
     ///////
     if tableColumn == tableView.tableColumns[0] {
-      image = item.icon
+      image = item.displayDecorations.imageFor()
       text = item.status
       cellIdentifier = CellIdentifiers.StatusCell
     }
       
     else if tableColumn == tableView.tableColumns[1] {
-      text = item.paddedUptime()
+      text = item.paddedUptime
       cellIdentifier = CellIdentifiers.UptimeCell
     }
       

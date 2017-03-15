@@ -34,6 +34,25 @@ public enum TaskSortOrdering: String {
 struct MasterTasks {
     
     static let framesPerSecond:Double = 3.0
+    static func masterDict() -> [String:Any] {
+        var out:[[String:Any]] = []
+        for row in taskRows {
+            let tr = row.dictFor()
+            out.append(tr)
+        }
+        let final :  [String:Any] = ["comment":"hoobee","server":out]
+        return final
+            
+        }
+ 
+    static func jsonData() throws -> Data {
+        let dict = masterDict()
+        if let json = try? JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted) {
+            return json
+        }
+        throw TinyError.cantSerializeJSON
+    }
+    
     fileprivate static var taskRows: [TaskData] = []
     
     static var info : [String:Any] = [:] //maps url to taskRows indicies
@@ -102,6 +121,8 @@ struct MasterTasks {
             }// not in progress
             theIndex += 1
         }// for loop
+        
+        print(masterDict())
     }// run scheduler
     
     //TODO: fix sorting
@@ -191,8 +212,18 @@ struct MasterTasks {
         return sortedFiles
     }
 }
-
 extension MasterTasks {
+    
+    static func arrayOfItems () -> [String:Any] {
+        var ari : [[String:Any]]=[]
+        for task in taskRows {
+            let item = task.dictFor()
+            ari.append(item)
+        }
+        let result:[String:Any] = ["comment":"aydyd","items":ari]
+        return result
+}
+    
     // make a remoteurl call
     // - the baseurl is used only as a key to obtain the index in the taskrows table
     

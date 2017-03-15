@@ -114,6 +114,22 @@ class  TaskData {
         self.lastResponse = last
         self.downcount = downcount
     }
+    func dictFor() -> [String:Any]{
+        return [
+            "selfidx": selfidx,
+         "status": status,
+          "name": name,
+           "server": server,
+            "statusEndpoint": statusEndpoint,
+             "version": version,
+              "uptime": uptime,
+               "description": description,
+                "displayDecorations": displayDecorations,
+                 "lastResponse": lastResponse,
+                  "downcount": downcount]
+    }
+    
+ 
     
     public var debugDescription: String {
         return uptime + " " + "\(server)" + " status: \(status)"

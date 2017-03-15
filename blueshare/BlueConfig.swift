@@ -7,11 +7,12 @@
 //
 
 import Foundation
-
-public class BlueConfig {
-  enum TinyError:Error {
+enum TinyError:Error {
     case infoplist
-  }
+    case cantSerializeJSON
+}
+public class BlueConfig {
+
   
     var localConfig:[String:Any] = [:]
     var grandConfig:[String:Any] = [:]

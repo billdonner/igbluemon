@@ -91,17 +91,3 @@ public class BlueConfig {
         
     }
 }// of BlueConfig
-
-/**
-#if os(OSX)
-let configurl = URL(fileURLWithPath:"/Users/williamdonner/igblu/public/config.json")
-#elseif os(Linux)
-let rootDirectory = URL(fileURLWithPath: "\(FileManager().currentDirectoryPath)/public")
-let configurl =  rootDirectory.appendingPathComponent("config.json")
-#endif
-
-
-let bc = try! BlueConfig.load(configurl: configurl)
-print(bc.grandConfig)
-print(bc.localConfig)
- */

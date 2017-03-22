@@ -31,23 +31,27 @@ extension String {
 
 /// ItemData is safely copied out to callers  so the task schedule can be private
 public struct ItemData  {
-    
-    var status: String
+    var httpgets: Int
+    var status: Int
     var server: String
     var name: String
-    var uptime: String
+    var uptime: Double
     var description : String
     var version : String
     var inprogress : Bool
     var downcount: Int
+    var errorcount:Int
     var statusEndpoint: String
     
     var displayDecorations : DisplayDecorations
     
     init(_ td:TaskData){
         self.status = td.status
+        self.httpgets = td.httpgets
+        
         self.server = td.server
         self.downcount = td.downcount
+        self.errorcount = td.errorcount
         self.name = td.name
         self.uptime = td.uptime
         self.description = td.description
@@ -61,7 +65,8 @@ public struct ItemData  {
     
     
     var paddedUptime: String {
-        let str = uptime.components(separatedBy: ".").first!
+        let zuptime = "\(uptime)"
+        let str = zuptime.components(separatedBy: ".").first!
         if  let xx = Double(str as String) {
             if xx > 0 {
                 let paddedStr = str.leftPadding(toLength:7,  withPad: "0" )
@@ -84,23 +89,24 @@ public struct ItemData  {
 
 class  TaskData {
     
-    var status: String
+    var httpgets: Int = 0
+    var status: Int
     var server: String
-    
-    var statusEndpoint: String
     var name: String
-    var uptime: String
+    var uptime: Double
+    var errorcount: Int = 0 
+    var statusEndpoint: String
     var description : String
     var version : String
     var inprogress = false
     var downcount: Int
-    var secsBetweenBadPolls: TimeInterval = 120
+    var secsBetweenBadPolls: TimeInterval = 60
     var secsBetweenGoodPolls: TimeInterval = 10
     var selfidx: Int
     var lastResponse:[String:Any]
     var displayDecorations : DisplayDecorations
     
-    init(idx: Int, status: String, name: String, server: String, statusEndpoint: String, uptime: String, description: String, version:String, downcount: Int, ish: DisplayDecorations, last:[String:Any]) {
+    init(idx: Int, status: Int, name: String, server: String, statusEndpoint: String, uptime: Double, description: String, version:String, downcount: Int, ish: DisplayDecorations, last:[String:Any]) {
         
         self.selfidx = idx
         self.status = status
@@ -120,6 +126,7 @@ class  TaskData {
          "status": status,
           "name": name,
            "server": server,
+           "httpgets" : httpgets,
             "statusEndpoint": statusEndpoint,
              "version": version,
               "uptime": uptime,
@@ -132,7 +139,7 @@ class  TaskData {
  
     
     public var debugDescription: String {
-        return uptime + " " + "\(server)" + " status: \(status)"
+        return "\(uptime)" + " " + "\(server)" + " status: \(status)"
     }
 }
 

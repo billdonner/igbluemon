@@ -33,7 +33,8 @@ public enum TaskSortOrdering: String {
 
 struct MasterTasks {
     
-    static let framesPerSecond:Double = 3.0
+    static let framesPerSecond:Double = 20
+    
     static func masterDict() -> [String:Any] {
         var out:[[String:Any]] = []
         for row in taskRows {
@@ -91,14 +92,15 @@ struct MasterTasks {
                 task.displayDecorations = .yellowish
                 
                 // print("runSched will poll \(task.server) idx \(MasterTasks.idx(url:task.server))")
-                remoteHTTPCall(task.statusEndpoint,baseurl: task.server ) { apistatus, status, name,uptime,description,version, server, response  in
+                remoteHTTPCall(task.statusEndpoint,baseurl: task.server ) { httpgets, status, name,uptime,description,version, server, response  in
                     
                     
                     if let merow = idx(url: server) {
                         
-                        if apistatus == 200 && status == "\(200)" {
+                        if status == (200) {
                             let td =  taskRows[merow ]
-                            td.status = "\(apistatus)"
+                            td.status = status
+                            td.httpgets = httpgets 
                             td.name = name
                             td.description = description
                             td.version = version
@@ -112,6 +114,7 @@ struct MasterTasks {
                             //let td = MasterTasks.taskList.taskRows[merow ]
                             
                             let td =  taskRows[merow ]
+                            td.errorcount += 1
                             td.status =  status
                               td.displayDecorations = .reddish
                             td.downcount = Int(td.secsBetweenBadPolls * framesPerSecond)// wait a minute after bad response
@@ -122,7 +125,7 @@ struct MasterTasks {
             theIndex += 1
         }// for loop
         
-        print(masterDict())
+       // print(masterDict())
     }// run scheduler
     
     //TODO: fix sorting
@@ -169,7 +172,7 @@ struct MasterTasks {
             if let bb = each["server"], let cc = each["status-url"] {
                 info[bb] = idx
                 // start each a litttle later by setting the downcount differently
-                taskRows.append(TaskData(idx: idx, status: "100", name:bb, server: bb, statusEndpoint:cc , uptime: "", description: "", version:"", downcount: idx, ish:.reddish,last:[:]))
+                taskRows.append(TaskData(idx: idx, status: 100, name:bb, server: bb, statusEndpoint:cc , uptime: 0.0, description: "", version:"", downcount: idx, ish:.reddish,last:[:]))
             }
             idx += 1
         } // for
@@ -227,7 +230,7 @@ extension MasterTasks {
     // make a remoteurl call
     // - the baseurl is used only as a key to obtain the index in the taskrows table
     
-    static func remoteHTTPCall(_ remoteurl: String,  baseurl: String, completion:@escaping (Int, String,String,String,String,String,String,[String:Any])->())
+    static func remoteHTTPCall(_ remoteurl: String,  baseurl: String, completion:@escaping (Int, Int,String,Double,String,String,String,[String:Any])->())
     {
         guard let idx = info[baseurl] as?  Int else { return }
         let t =  taskRows[idx]
@@ -248,15 +251,15 @@ extension MasterTasks {
                 let code = httpResponse.statusCode
                 guard code == 200 else {
                     print("remoteHTTPCall to \(url) completing with error \(code)")
-                        completion(code,"\(code)","","","","",baseurl,[:]) //fix
+                        completion(0,code,"",0.0,"","",baseurl,[:]) //fix
                     return
                 }
             }
             guard error == nil  else {
                 let er = error! as NSError
-                print("remoteHTTPCall to \(url) completing without code error \(er.code)")
+                print("remoteHTTPCall to \(url) completing  code nserror \(er.code)")
                 let code = er.code
-                    completion(code,"\(code)","","","","",baseurl,[:]) //fix
+                    completion(0,code,"",0.0,"","",baseurl,[:]) //fix
                 return
             }
   
@@ -268,14 +271,16 @@ extension MasterTasks {
                 let d = _d {
                 if let t = d ["servertitle"] as? String ,
                     let p = d ["description"] as? String ,
-                    let s = d ["elapsed-secs"] as? String ,
+                    let s = d ["up-time"] as? Double ,
+                    let r =  d["response-status"] as? Int,
+                    let h = d ["httpgets"] as? Int,
                     let v =  d["softwareversion"] as? String {
-                    let r = "200"
+                    
                     if  let dict = d ["data"] as? [String:Any] {
-                        completion(200, r,t,s,p,v,baseurl,dict)
+                        completion(h, r,t,s,p,v,baseurl,dict)
                     }
                     else {
-                        completion(200, r,t,s,p,v,baseurl,[:])
+                        completion(h, r,t,s,p,v,baseurl,[:])
                     }
                     return
                 } // good parse
@@ -283,7 +288,7 @@ extension MasterTasks {
             }//parsed good
       
                 //bad parse
-                completion(527,"527","","","","",baseurl,[:]) //fix
+                completion(0,527,"",0.0,"","",baseurl,[:]) //fix
                 print("remoteHTTPCall to \(baseurl) could not parse remote response")
             
         }

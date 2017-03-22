@@ -4,6 +4,8 @@ Monitoring a dozen or so bluemix servers with this tool.
 
 Reads a remote JSON configuration file to specify servers.
 
+Optimally servers are using [https://github.com/billdonner/IgKitCommons](https://github.com/billdonner/IgKitCommons) to generate standard json status responses.
+
 ## Setting Up monitoring
 
 - make a config file
